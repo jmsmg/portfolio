@@ -1,1 +1,28 @@
 {% extends 'base.html' %}
+{% block title %}
+<title>포트폴리오</title>
+{% endblock %}
+<!--블로그-->
+<section class='portfolio'>
+    <div lcass='inner'>
+        <ul class='post-list'>
+            {% for item in posts %}
+            <li>
+                <div class='card'>
+                    <div class='card-inner'>
+                        <a href="{% url 'post:detail' item.id %}">
+                            <div class='card-img'>
+                                <img src='{{ item.image.url }}' alt='{{ item.title }}' width='300px'>
+                            </div>
+                            <div class='card-title'>
+                                <p>{{ item.title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
