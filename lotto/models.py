@@ -24,5 +24,5 @@ class GuessNumbers(models.Model):
         self.update_date = timezone.now()
         self.save() # GuessNumbers object를 DB에 저장
 
-    # def __str__(self) -> str:
-    #     return f'pk {self.pk} : {self.name} - {self.text}'
+    def __str__(self) -> str:
+        return f'pk {self.pk} : {self.name} - {self.text}'
